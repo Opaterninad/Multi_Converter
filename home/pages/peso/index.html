@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Convertidor de Masa</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="icon" href="png/icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cabin&family=Rubik&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="img/icon.png" />
+  </head>
+  <body>
+    <div class="navigation">
+      <div class="menuToggle"></div>
+      <ul>
+        <li class="list" style="--clr: #f44336">
+          <a href="/home/index.html">
+            <span class="icon"><ion-icon name="home"></ion-icon></span>
+            <span class="text">Home</span>
+          </a>
+        </li>
+        <li class="list" style="--clr: #0fc70f">
+          <a href="../cal/index.html">
+            <span class="icon"
+              ><ion-icon name="calculator-sharp"></ion-icon
+            ></span>
+            <span class="text">Calculator</span>
+          </a>
+        </li>
+        <li class="list" style="--clr: #ffa117">
+          <a href="../tem/index.html">
+            <span class="icon"
+              ><ion-icon name="thermometer-outline"></ion-icon
+            ></span>
+            <span class="text">Temp Converter</span>
+          </a>
+        </li>
+        <li class="list" style="--clr: #2196f3">
+          <a href="../fina/index.html">
+            <span class="icon"><ion-icon name="cash-sharp"></ion-icon></span>
+            <span class="text">loan Calculator</span>
+          </a>
+        </li>
+        <li class="list active" style="--clr: #b145e9">
+          <a href="../peso/index.html">
+            <span class="icon"><ion-icon name="barbell-sharp"></ion-icon></span>
+            <span class="text">Mass Converter</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <div class="container">
+      <div class="form">
+        <div class="title">
+          <h1><b>Conversor de Masa</b></h1>
+        </div>
+        <form id="formulario">
+          <div class="row">
+            <label for="cantidad_a">Cantidad</label>
+            <input id="cantidad_a" class="input" type="number" />
+          </div>
+          <div class="row">
+            <label for="type_a">Tipo de Unidad</label>
+            <select class="input-b" id="type_a" data-id="a" name="tipounidad">
+              <option value="oz" selected="selected">Onza</option>
+              <option value="lb">Libra</option>
+              <option value="microg">Microgramo</option>
+              <option value="mg">Miligramo</option>
+              <option value="g">Gramo</option>
+              <option value="kg">Kilogramo</option>
+              <option value="tn">Tonelada</option>
+            </select>
+          </div>
+          <div class="colum-textcenter"></div>
+          <div class="row">
+            <label for="cantidad_b">Cantidad</label>
+            <input id="cantidad_b" class="input" type="number" />
+          </div>
+          <div class="row">
+            <label for="type_b">Tipo de Unidad</label>
+            <select
+              class="input-b"
+              id="type_b"
+              data-id="a"
+              name="tipounidad"
+              tabindex="1"
+            >
+              <option value="oz" selected="selected">Onza</option>
+              <option value="lb">Libra</option>
+              <option value="microg">Microgramo</option>
+              <option value="mg">Miligramo</option>
+              <option value="g">Gramo</option>
+              <option value="kg">Kilogramo</option>
+              <option value="tn">Tonelada</option>
+            </select>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

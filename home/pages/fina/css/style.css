@@ -1,0 +1,266 @@
+@import "https://fonts.googleapis.com/css2?family=Cabin&display=swap";
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #044E8E;
+  font-family: "Cabin", sans-serif;
+  display: block;
+  gap: 10px;
+  align-items: center;
+  height: 90vh;
+  justify-content: center;
+  position: relative;
+}
+
+.navigation {
+  position: fixed;
+  inset: 20px 0 20px 20px;
+  width: 75px;
+  background: #ECF1FE;
+  transition: 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+}
+.navigation .menuToggle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 70px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 38px;
+}
+.navigation .menuToggle::before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  background: #333;
+  transform: translateY(-8px);
+  transition: 0.5s;
+}
+.navigation .menuToggle::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  background: #333;
+  transform: translateY(8px);
+  transition: 0.5s;
+  box-shadow: 0 -8px 0 #333;
+}
+.navigation ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  padding: 0px 10px;
+}
+.navigation ul li {
+  list-style: none;
+  position: relative;
+  width: 100%;
+  height: 60px;
+  padding: 0 10px;
+  transition: 0.5s;
+}
+.navigation ul li.active {
+  transform: translateX(30px);
+}
+.navigation ul li.active a .icon {
+  color: #fff;
+  background: var(--clr);
+}
+.navigation ul li.active a .icon::before {
+  opacity: 0.5s;
+}
+.navigation ul li.active a .text {
+  color: var(--clr);
+}
+.navigation ul li a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  text-decoration: none;
+}
+.navigation ul li a .icon {
+  position: relative;
+  display: block;
+  min-width: 55px;
+  height: 55px;
+  line-height: 60px;
+  transition: 0.5s;
+  border-radius: 10px;
+  font-size: 1.75em;
+  color: #222;
+}
+.navigation ul li a .icon::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--clr);
+  filter: blur(8px);
+  opacity: 0;
+  transition: 0.5s;
+}
+.navigation ul li a .icon:hover {
+  background-color: #1f8ff1;
+}
+.navigation ul li a .text {
+  position: relative;
+  padding: 0 15px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  color: #333;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s;
+  font-size: 16px;
+}
+.navigation ul li a .text:hover {
+  background-color: #1f8ff1;
+}
+.navigation.open .menuToggle::before {
+  transform: translateY(0px) rotate(45deg);
+}
+.navigation.open {
+  width: 248px;
+}
+.navigation.open .menuToggle::after {
+  transform: translateY(0px) rotate(-45deg);
+  box-shadow: 0 0 0 #333;
+}
+.navigation.open ul li.active {
+  transform: translateX(10px);
+}
+.navigation.open ul li a .text {
+  opacity: 1;
+  visibility: visible;
+}
+
+.container {
+  min-height: 200px;
+  background: #FFFFFF;
+  border-radius: 3%;
+  text-align: left;
+  padding: 20px;
+  max-width: 700px;
+  width: 100%;
+  color: #404040;
+  margin: 23%;
+  margin-top: 6%;
+}
+
+.foot {
+  text-align: center;
+  display: none;
+}
+
+.footd {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-collapse: collapse;
+}
+
+td {
+  border: 1px solid #ccc;
+  padding: 6px;
+  border-radius: 8%;
+  font-size: 24px;
+}
+
+.tdc {
+  background-color: #ECF1FE;
+}
+
+h1 {
+  color: #044E8E;
+  margin: 0px 0px 10px;
+  margin-bottom: 20px;
+  font-size: 30px;
+}
+
+fieldset {
+  border: none;
+}
+
+form label {
+  display: block;
+  font-size: 22px;
+}
+
+form input {
+  margin-top: 2%;
+  width: 80%;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 20px;
+}
+
+span {
+  color: #090909;
+  font-size: 24px;
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #FBB138;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 28px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #4b38fb;
+}
+
+.tab {
+  font-size: 16px;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    margin: 14%;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    width: 75%;
+    margin: 10%;
+  }
+}
+@media (max-width: 425px) {
+  .container {
+    max-width: 500px;
+    width: 70%;
+    margin: 10%;
+  }
+  td {
+    font-size: 10px;
+    padding: 1px;
+  }
+}
+@media (max-width: 320px) {
+  td {
+    font-size: 12px;
+  }
+}/*# sourceMappingURL=style.css.map */

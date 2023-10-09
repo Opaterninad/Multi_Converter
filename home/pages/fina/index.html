@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora de Préstamos</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="png/icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cabin&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="navigation">
+      <div class="menuToggle"></div>
+      <ul>
+        <li class="list" style="--clr: #f44336">
+          <a href="/home/index.html">
+            <span class="icon"><ion-icon name="home"></ion-icon></span>
+            <span class="text">Home</span>
+          </a>
+        </li>
+        <li class="list" style="--clr: #0fc70f">
+          <a href="../cal/index.html">
+            <span class="icon"
+              ><ion-icon name="calculator-sharp"></ion-icon
+            ></span>
+            <span class="text">Calculator</span>
+          </a>
+        </li>
+        <li class="list" style="--clr: #ffa117">
+          <a href="../tem/index.html">
+            <span class="icon"
+              ><ion-icon name="thermometer-outline"></ion-icon
+            ></span>
+            <span class="text">Temp Converter</span>
+          </a>
+        </li>
+        <li class="list active" style="--clr: #2196f3">
+          <a href="../fina/index.html">
+            <span class="icon"><ion-icon name="cash-sharp"></ion-icon></span>
+            <span class="text">loan Calculator</span>
+          </a>
+        </li>
+        <li class="list" style="--clr: #b145e9">
+          <a href="../peso/index.html">
+            <span class="icon"><ion-icon name="barbell-sharp"></ion-icon></span>
+            <span class="text">Mass Converter</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <div class="container">
+      <fieldset>
+        <h1>Calculadora de Préstamos</h1>
+        <form>
+          <div class="form-group">
+            <label for="capital" name="amount"
+              ><b>Monto del préstamo </b></label
+            >
+            <span>$</span>
+            <input type="text" placeholder="Escriba aqui" id="capital" />
+          </div>
+          <br />
+          <div class="form-group">
+            <label for="cuota"><b>Cuota mensual </b></label>
+            <input type="number" placeholder="Escriba aqui" id="cuota" />
+          </div>
+          <br />
+          <div class="form-group">
+            <label for="interes"><b>Interes mensual </b></label>
+            <input type="number" placeholder="Escriba aqui" id="interes" />
+            <span>%</span>
+          </div>
+          <br />
+        </form>
+        <button id="button" onclick="calcularPrestamo();">Calcular</button>
+      </fieldset>
+      <hr />
+      <div class="foot" id="foot">
+        <h1>Pagos Mensuales</h1>
+        <table class="tab">
+          <thead>
+            <div class="footd">
+              <tr>
+                <td class="tdc"><b>Mes</b></td>
+                <td class="tdc"><b>Capital</b></td>
+                <td class="tdc"><b>Intereses</b></td>
+                <td class="tdc"><b>Total a Pagar</b></td>
+              </tr>
+            </div>
+          </thead>
+          <tbody id="tab"></tbody>
+          <tfoot>
+            <tr>
+              <td class="tdc"><b>TOTAL</b></td>
+              <td id="t1"></td>
+              <td id="t2"></td>
+              <td id="t3"></td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </body>
+</html>
