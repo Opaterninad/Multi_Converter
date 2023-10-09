@@ -159,7 +159,7 @@ body {
   width: 100%;
   color: #404040;
   margin: 23%;
-  margin-top: 6%;
+  margin-top: 5%;
 }
 
 .foot {
@@ -224,7 +224,7 @@ button {
   border: none;
   border-radius: 8px;
   color: #fff;
-  font-size: 28px;
+  font-size: 24px;
   cursor: pointer;
   margin-top: 10px;
 }
