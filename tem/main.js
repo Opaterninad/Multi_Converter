@@ -48,3 +48,10 @@ function activarLink() {
   this.classList.add("active");
 }
 list.forEach((item) => item.addEventListener("click", activarLink));
+
+const menutoggle = document.querySelector(".toggle");
+const navigatioon = document.querySelector(".navigation");
+menutoggle.onclick = function () {
+  menutoggle.classList.toggle("active");
+  navigatioon.classList.toggle("active");
+};

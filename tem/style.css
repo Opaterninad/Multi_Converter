@@ -18,7 +18,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 12px;
+    border-radius: 6px;
   }
   .navigation .menuToggle {
     position: absolute;
@@ -56,7 +56,6 @@ body {
     flex-direction: column;
     gap: 10px;
     width: 100%;
-    padding: 10px;
   }
   .navigation ul li {
     list-style: none;
@@ -143,6 +142,81 @@ body {
   .navigation.open ul li a .text {
     opacity: 1;
     visibility: visible;
+  }
+  /*toggle responsive*/
+  @media (max-width: 768px) {
+  .navigation {
+    display: none;
+  }
+  .navigation.active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #1f8ff1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 0px;
+    .menuToggle {
+      display: none;
+    }
+  }
+  .navigation ul li a {
+    position: relative;
+    font-size: 1.5em;
+    margin: 10px 0;
+    display: contents;
+    align-items: center;
+    justify-content: center;
+  }
+  .navigation ul li.active {
+     transform: translateX(0px); 
+  }
+  .toggle {
+    position: fixed;
+    width: 30px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    cursor: pointer;
+    margin-left: 3%;
+    padding-bottom: 30px;
+  }
+  .toggle::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    transform: translateY(-10px);
+    box-shadow: 0 10px 0 #fff;
+    transition: 0.25s;
+  }
+  .toggle::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    transform: translateY(10px);
+    transition: 0.25s;
+    
+  }
+  .toggle.active {
+    position: relative;
+  }
+  .toggle.active::before {
+    transform: translateY(0px) rotate(45deg);
+    box-shadow: 0 0 0 #fff;
+  }
+  .toggle.active::after {
+    transform: translateY(0px) rotate(-45deg);
+  }
   }
   .container {
     background-color: #fff;
