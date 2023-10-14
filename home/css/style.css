@@ -173,6 +173,9 @@ body {
   align-items: center;
   justify-content: center;
 }
+.navigation ul li a .icon {
+  width: 82%;
+}
 .navigation ul li.active {
    transform: translateX(0px); 
 }

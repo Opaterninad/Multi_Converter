@@ -143,82 +143,7 @@ body {
   opacity: 1;
   visibility: visible;
 }
-/*toggle responsive*/
-@media (max-width: 768px) {
-.navigation {
-  display: none;
-}
 
-.navigation.active {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #1f8ff1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  border-radius: 0px;
-  .menuToggle {
-    display: none;
-  }
-}
-.navigation ul li a {
-  position: relative;
-  font-size: 1.5em;
-  margin: 10px 0;
-  display: contents;
-  align-items: center;
-  justify-content: center;
-}
-.navigation ul li.active {
-   transform: translateX(0px); 
-}
-.toggle {
-  position: fixed;
-  width: 30px;
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1;
-  cursor: pointer;
-  margin-left: 3%;
-  padding-bottom: 30px;
-}
-.toggle::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  background: #fff;
-  transform: translateY(-10px);
-  box-shadow: 0 10px 0 #fff;
-  transition: 0.25s;
-}
-.toggle::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  background: #fff;
-  transform: translateY(10px);
-  transition: 0.25s;
-  
-}
-.toggle.active {
-  position: relative;
-}
-.toggle.active::before {
-  transform: translateY(0px) rotate(45deg);
-  box-shadow: 0 0 0 #fff;
-}
-.toggle.active::after {
-  transform: translateY(0px) rotate(-45deg);
-}
-}
 .container {
   height: 100vh;
   width: 100vw;
@@ -236,6 +161,7 @@ body {
   border-radius: 12px;
   background-color: #fff;
   position: inherit;
+
   /*Dark Theme*/
 }
 .calculator #display {
@@ -309,7 +235,7 @@ body {
   transform: translate(-50%, -50%);
   border-radius: 50%;
   background-color: #333;
-  z-index: -1;
+  z-index: 1;
 }
 
 .theme-toggler.active {
@@ -332,3 +258,85 @@ button {
 button:hover {
   transform: scale(1.1);
 }
+/*toggle responsive*/
+@media (max-width: 768px) {
+  .navigation {
+    display: none;
+  }
+  
+  .navigation.active {
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #1f8ff1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 0px;
+    .menuToggle {
+      display: none;
+    }
+   
+  }
+  .navigation ul li a {
+    position: relative;
+    font-size: 1.5em;
+    margin: 10px 0;
+    display: contents;
+    align-items: center;
+    justify-content: center;
+  }
+  .navigation ul li.active {
+     transform: translateX(0px); 
+  }
+  .toggle {
+    position: fixed;
+    width: 30px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+    cursor: pointer;
+    margin-left: 3%;
+    padding-bottom: 30px;
+  }
+  .toggle::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    transform: translateY(-10px);
+    box-shadow: 0 10px 0 #fff;
+    transition: 0.25s;
+  }
+  .toggle::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    transform: translateY(10px);
+    transition: 0.25s;
+    
+  }
+  .toggle.active {
+    position: relative;
+  }
+  .toggle.active::before {
+    transform: translateY(0px) rotate(45deg);
+    box-shadow: 0 0 0 #fff;
+  }
+  .toggle.active::after {
+    transform: translateY(0px) rotate(-45deg);
+  }
+  .calculator {
+    padding: 1%;
+    margin-top: 7%;
+  }
+  }
