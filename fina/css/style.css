@@ -283,6 +283,10 @@ button:hover {
       display: none;
     }
   }
+  .navigation ul {
+    width: 100%;
+    padding: 0px;
+  }
   .navigation ul li a {
     position: relative;
     font-size: 1.5em;
@@ -292,7 +296,7 @@ button:hover {
     justify-content: center;
   }
   .navigation ul li a .icon {
-    width: 82%;
+    width: 94%;
   }
   .navigation ul li.active {
      transform: translateX(0px); 
