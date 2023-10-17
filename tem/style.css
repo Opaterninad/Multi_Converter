@@ -1,329 +1,300 @@
 @import "https://fonts.googleapis.com/css2?family=Cabin&display=swap";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Cabin", sans-serif;
+}
+
 body {
-    background-color: #004E8E;
-    color: #000000;
-    font-family: "Cabin", sans-serif;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0 auto;
     padding: 0;
-  }
-  .navigation {
-    position: fixed;
-    inset: 20px 0 20px 20px;
-    width: 75px;
-    background: #ECF1FE;
-    transition: 0.5s;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 6px;
-    z-index: 2;
-  }
-  .navigation .menuToggle {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 70px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 38px;
-  }
-  .navigation .menuToggle::before {
-    content: "";
-    position: absolute;
-    width: 30px;
-    height: 2px;
-    background: #333;
-    transform: translateY(-8px);
-    transition: 0.5s;
-  }
-  .navigation .menuToggle::after {
-    content: "";
-    position: absolute;
-    width: 30px;
-    height: 2px;
-    background: #333;
-    transform: translateY(8px);
-    transition: 0.5s;
-    box-shadow: 0 -8px 0 #333;
-  }
-  .navigation ul {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
-  }
-  .navigation ul li {
-    list-style: none;
-    position: relative;
-    width: 100%;
-    height: 60px;
-    padding: 0 10px;
-    transition: 0.5s;
-  }
-  .navigation ul li.active {
-    transform: translateX(30px);
-  }
-  .navigation ul li.active a .icon {
-    color: #fff;
-    background: var(--clr);
-  }
-  .navigation ul li.active a .icon::before {
-    opacity: 0.5s;
-  }
-  .navigation ul li.active a .text {
-    color: var(--clr);
-  }
-  .navigation ul li a {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    text-align: center;
-    text-decoration: none;
-  }
-  .navigation ul li a .icon {
-    position: relative;
-    display: block;
-    min-width: 55px;
-    height: 55px;
-    line-height: 60px;
-    transition: 0.5s;
-    border-radius: 10px;
-    font-size: 1.75em;
-    color: #222;
-  }
-  .navigation ul li a .icon::before {
-    content: "";
-    position: absolute;
-    top: 10px;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--clr);
-    filter: blur(8px);
-    opacity: 0;
-    transition: 0.5s;
-  }
-  .navigation ul li a .icon:hover {
-    background-color: #1f8ff1;
-  }
-  .navigation ul li a .text {
-    position: relative;
-    padding: 0 15px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    color: #333;
-    opacity: 0;
-    visibility: hidden;
-    transition: 0.5s;
-  }
-  .navigation ul li a .text:hover {
-    background-color: #1f8ff1;
-  }
-  .navigation.open .menuToggle::before {
-    transform: translateY(0px) rotate(45deg);
-  }
-  .navigation.open {
-    width: 248px;
-  }
-  .navigation.open .menuToggle::after {
-    transform: translateY(0px) rotate(-45deg);
-    box-shadow: 0 0 0 #333;
-  }
-  .navigation.open ul li.active {
-    transform: translateX(10px);
-  }
-  .navigation.open ul li a .text {
-    opacity: 1;
-    visibility: visible;
+    margin: 7%;
+    margin-left: 10%;
+    background-color: #044E8E;
+    font-family: "Cabin", sans-serif;
+}
+.container {
+        background-color: #FFFFFF;
+        border: 2px solid #ccc;
+        padding: 20px;
+        text-align: center;
+        max-width: 400px;
+        margin: 0 auto;
+        border-radius: 15px;
+      }
+          
+  .container h1 {
+    color: #044E8E;
+    font-size: 30px;
+    margin-bottom: 10px;
   }
   
-  .container {
-    background-color: #fff;
-    border: none;
-    padding: 20px;
-    text-align: center;
-    max-width: 400px;
-    width: 90%;
-    border-radius: 15px;
-    margin: 0 auto;
-  }
-  .input-wrapper {
-    position: static;
-    margin-bottom: 2px;
-    margin-right: 20px;
-    display: flex;
-    flex-direction: column;
-  }
-  .symbol {
-    position: relative;
-    right: -50%;
-    top: 65%;
-    margin-bottom: -6%;
-    transform: translateY(-200%);
-    font-size: 18px;
-    z-index: 1;
-  }
-  form label,
-  form input {
-    display: block;
-    margin-bottom: 10px;
+  .container label {
     font-weight: bold;
     font-size: 20px;
     color: #404040;
-    box-sizing: border-box;
+    display: block;
+    margin-bottom: 5px;
   }
   
-  form input {
+  .container input {
     width: calc(100% - 20px);
     padding: 10px;
     border: 1px solid #404040;
     border-radius: 12px;
+    margin-bottom: 15px;
   }
-
-  form button {
-    width: calc(50% - 5px);
-    height: 40px;
+  
+  .container button {
+    width: 50%;
+    height: 50px;
     background-color: #FBB138;
     color: white;
     font-weight: bold;
     border: none;
     cursor: pointer;
-    margin-top: 1px;
+    margin-top: 10px;
     border-radius: 16px;
     font-size: 18px;
   }
   
-  form button:hover {
+  .container button:hover {
     background-color: #005C2B;
     transition: 0.25s;
   }
-
-  h1 {
-    color: #044E8E;
-    margin: 0px 0px 10px;
-    margin-bottom: 20px;
-    font-size: 30px;
-  }
   
-  #mensaje {
+  .container #mensaje {
     margin-top: 20px;
     font-size: 14px;
     text-align: center;
   }
-  input::placeholder {
-    font-size: 16px;
+  
+  .container .symbol {
+    font-size: 18px;
   }
-  /*toggle responsive*/
-  @media (max-width: 768px) {
+  
+.navigation {
+  position: fixed;
+  inset: 20px 0 20px 20px;
+  width: 75px;
+  background: #ECF1FE;
+  transition: 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+}
+.navigation .menuToggle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 70px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 38px;
+}
+.navigation .menuToggle::before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  background: #333;
+  transform: translateY(-8px);
+  transition: 0.5s;
+}
+.navigation .menuToggle::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  background: #333;
+  transform: translateY(8px);
+  transition: 0.5s;
+  box-shadow: 0 -8px 0 #333;
+}
+.navigation ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+.navigation ul li {
+  list-style: none;
+  position: relative;
+  width: 100%;
+  height: 60px;
+  padding: 0 10px;
+  transition: 0.5s;
+}
+.navigation ul li.active {
+  transform: translateX(30px);
+}
+.navigation ul li.active a .icon {
+  color: #fff;
+  background: var(--clr);
+}
+.navigation ul li.active a .icon::before {
+  opacity: 0.5s;
+}
+.navigation ul li.active a .text {
+  color: var(--clr);
+}
+.navigation ul li a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  text-decoration: none;
+}
+.navigation ul li a .icon {
+  position: relative;
+  display: block;
+  min-width: 55px;
+  height: 55px;
+  line-height: 60px;
+  transition: 0.5s;
+  border-radius: 10px;
+  font-size: 1.75em;
+  color: #222;
+}
+.navigation ul li a .icon::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--clr);
+  filter: blur(8px);
+  opacity: 0;
+  transition: 0.5s;
+}
+.navigation ul li a .icon:hover {
+  background-color: #1f8ff1;
+}
+.navigation ul li a .text {
+  position: relative;
+  padding: 0 15px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  color: #333;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s;
+}
+.navigation ul li a .text:hover {
+  background-color: #1f8ff1;
+}
+.navigation.open .menuToggle::before {
+  transform: translateY(0px) rotate(45deg);
+}
+.navigation.open {
+  width: 248px;
+}
+.navigation.open .menuToggle::after {
+  transform: translateY(0px) rotate(-45deg);
+  box-shadow: 0 0 0 #333;
+}
+.navigation.open ul li.active {
+  transform: translateX(10px);
+}
+.navigation.open ul li a .text {
+  opacity: 1;
+  visibility: visible;
+}
+/*toggle responsive*/
+@media (max-width: 768px) {
+.navigation {
+  display: none;
+}
+.navigation.active {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #1f8ff1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 0px;
+  .menuToggle {
+    display: none;
+  }
+}
+.navigation ul li {
+  width: 120%;
+}
+.navigation ul li a {
+  position: relative;
+  font-size: 1.5em;
+  margin: 10px 0;
+  display: contents;
+  align-items: center;
+  justify-content: center;
+}
+.navigation ul li a .icon {
+  width: 82%;
+}
+.navigation ul li.active {
+   transform: translateX(0px); 
+}
+.toggle {
+  position: fixed;
+  width: 30px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  cursor: pointer;
+  margin-left: -8%;
+  padding-bottom: 10%;
+}
+.toggle::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #FFFFFF;
+  transform: translateY(-10px);
+  box-shadow: 0 10px 0 #FFFFFF;
+  transition: 0.25s;
+}
+.toggle::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #FFFFFF;
+  transform: translateY(10px);
+  transition: 0.25s;
+  
+}
+.toggle.active {
+  position: relative;
+}
+.toggle.active::before {
+  transform: translateY(0px) rotate(45deg);
+  box-shadow: 0 0 0 #fff;
+}
+.toggle.active::after {
+  transform: translateY(0px) rotate(-45deg);
+}
+}
+@media (max-width: 320px) {
     .container {
-      padding: 4%;
-      text-align: center;
-    }
-    .navigation {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-    }
-    .navigation.active {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: #1f8ff1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      border-radius: 0px;
-      .menuToggle {
-        display: none;
-      }
-    }
-    .navigation ul li {
-      width: 140%;
-      position: relative;
-    }
-    .navigation ul li a {
-      position: relative;
-      font-size: 1.5em;
-      margin: 10px 0;
-      display: contents;
-      align-items: center;
-      justify-content: center;
-    }
-    .navigation ul li a .icon {
-      width: 65%;
-    }
-    .navigation ul li.active {
-       transform: translateX(0px); 
-    }
-    .toggle {
-      position: relative;
-      width: 30px;
-      height: 100px;
-      display: grid;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-      margin-left: 2%;
-      margin-bottom: 70%;
-      padding-left: 2%;
-      z-index: 3;
-    }
-    .toggle::before {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 2px;
-      background: #fff;
-      transform: translateY(-10px);
-      box-shadow: 0 10px 0 #fff;
-      transition: 0.25s;
-    }
-    .toggle::after {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 2px;
-      background: #fff;
-      transform: translateY(10px);
-      transition: 0.25s;
-      
-    }
-    .toggle.active {
-      position: relative;
-    }
-    .toggle.active::before {
-      transform: translateY(0px) rotate(45deg);
-      box-shadow: 0 0 0 #fff;
-    }
-    .toggle.active::after {
-      transform: translateY(0px) rotate(-45deg);
-    }
-    }
-    @media (max-width: 425px) {
-      .toggle {
-        margin-bottom: 132%;
-      }
-    }
-    @media (max-width: 376px) {
-      .toggle {
-        margin-bottom: 150%;
-      }
-    }
-    @media (max-width: 320px) {
-      .toggle {
-        margin-bottom: 170%;
-      }
-    }
+      margin: 10px;
+    } 
+}
+@media (max-width: 375px) {
+    .container {
+      margin: 15px;
+    } 
+}
