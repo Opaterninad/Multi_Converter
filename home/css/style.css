@@ -165,6 +165,9 @@ body {
     display: none;
   }
 }
+.navigation ul li {
+  width: 120%;
+}
 .navigation ul li a {
   position: relative;
   font-size: 1.5em;
