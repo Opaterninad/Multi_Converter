@@ -1,4 +1,5 @@
 @import "https://fonts.googleapis.com/css2?family=Cabin&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Cabin&family=Cabin+Condensed:wght@700&family=Rubik&display=swap";
 * {
   margin: 0;
   padding: 0;
@@ -148,7 +149,7 @@ body {
   border: 2px solid #ccc;
   padding: 20px;
   text-align: center;
-  max-width: 60%;
+  max-width: 65%;
   margin: 0 auto;
   border-radius: 15px;
   border: none;
@@ -169,7 +170,10 @@ body {
   color: #043a69;
 }
 h1 {
-  font-size: 36px;
+  font-size: 40px;
+  font-family: 'Cabin', sans-serif;
+  font-family: 'Cabin Condensed', sans-serif;
+  font-family: 'Rubik', sans-serif;
 }
 .resume {
   margin: 4%;
@@ -209,13 +213,18 @@ h1 {
 }
 /*toggle responsive*/
 @media (max-width: 1024px) {
+  .container {
+    height: 56vh;
+  }
   .conversiones {
     flex-wrap: nowrap;
   }
 }
 @media (max-width: 768px) {
   .container {
-    height: 64vh;
+    height: 63vh;
+    width: 80%;
+    margin-left: 12%;
   }
   h4 {
     font-size: 12px;
@@ -313,4 +322,68 @@ h1 {
 .toggle.active::after {
   transform: translateY(0px) rotate(-45deg);
 }
+@media (max-width: 425px) {
+  .container {
+    height: 93vh;
+    width: 300px;
+    margin-left: 16%;
+  }
+  h4 {
+    font-size: 10px;
+  }
+  h1 {
+    font-size: 24px;
+  }
+  h3 {
+    font-size: 15px;
+  }
+  .titulo {
+    margin-left: 0px;
+    margin-bottom: 6%;
+  }
+  .icons {
+    font-size: 16px;
+}
+  .icof {
+    display: block;
+    z-index: 1;
+    font-size: 20px;
+    margin-block: -10px;
+  }
+  .conversiones {
+    flex-wrap: wrap;
+    display: flex;
+  }
+  .conver {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    min-width: 40%;
+    text-align: center;
+    max-width: 20%;
+  }
+}
+@media (max-width: 375px) {
+  .container {
+    height: 90vh;
+    width: 100%;
+  }
+ h1 {
+font-size: 22px;
+ }
+  }
+  @media (max-width: 320px) {
+    .container {
+      height: 81vh;
+      width: 100%;
+    }
+    h1 {
+   font-size: 18px;
+    }
+    .conver {
+      min-width: 38%;
+    }
+     }
 }
