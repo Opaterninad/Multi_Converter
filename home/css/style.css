@@ -188,7 +188,15 @@ h1 {
   cursor: pointer;
   color: #032e52;
 }
-
+.iconyou {
+  color: #ff0000;
+}
+.iconlink {
+  color: #0e76a8;
+}
+.icongit {
+  color: #171515;
+}
 .conversiones {
   display: flex;
   flex-wrap: wrap;
